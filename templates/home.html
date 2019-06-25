@@ -16,6 +16,13 @@
 	<button type = "button" onclick="window.location.reload()">
 		Generate random number
 	</button>
-	<img src="{{ gif }}" alt = "" >
+	<form method="POST">
+		<input type="text" name="entry">
+		<input type="submit" name="send" value="send">
+	</form>
+	<!--<img src="{{ gif }}" alt = "" >-->
+	<p>
+		{{ data }}
+	</p>
 </body>
 </html>
