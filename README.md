@@ -1,0 +1,1 @@
+this website will either find a random GIF or it allows the user to search for a GIF
