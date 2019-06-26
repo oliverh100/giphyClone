@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/styles.css') }}">
+	<title>
+		{{ title }} - giphy clone
+	</title>
+</head>
+<body>
+	<button type = "button" onclick="window.location.reload()">
+		Generate random GIF
+	</button>
+	<a href="{{ url_for('home') }}">
+		<button type = "button">
+			Go home
+		</button>
+	</a>
+	<p>
+		{{ num }}
+	</p>
+	<!--<img src="{{ gif }}" alt = "" >-->
+</body>
+</html>

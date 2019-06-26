@@ -10,16 +10,16 @@
 	<h1 id = "h1_title">
 		Welcome to giphy clone
 	</h1>
-	<p>
-		{{ num }}
-	</p>
-	<button type = "button" onclick="window.location.reload()">
-		Generate random number
-	</button>
-	<form method="POST">
-		<input type="text" name="entry">
-		<input type="submit" name="send" value="send">
-	</form>
+	<a href="{{ url_for('randomGIF') }}">
+		<button>
+			Choose random GIF
+		</button>
+	</a>
+	<a href="{{ url_for('search') }}">
+		<button>
+			Search for a GIF
+		</button>
+	</a>
 	<!--<img src="{{ gif }}" alt = "" >-->
 	<p>
 		{{ data }}
