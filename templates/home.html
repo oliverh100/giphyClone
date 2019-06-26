@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/styles.css') }}">
+	<link rel= "stylesheet" type = "text/css" href = "{{ url_for('static', filename='stylesheets/style.css') }}">
 	<script type="text/javascript">
 		if ( '{{ flag }}' == 'True') {
 			alert('GIF not found');
@@ -12,18 +12,27 @@
 	</title>
 </head>
 <body>
-	<h1 id = "h1_title">
-		Welcome to giphy clone
-	</h1>
-	<form method="GET">
-		<input type="text" name="entry">
-		<input type="submit" name="search" value="search">
-	</form>
-	<a href="{{ url_for('home') }}">
-		<button>
-			Random GIF
-		</button>
-	</a>
-	<img src="{{ gif }}" alt = "" >
+	<div class="header">
+		<h1 id = "h1_title">
+			Welcome to giphy clone
+		</h1>
+	</div>
+	<div class="main">
+		<img src="{{ gif }}" alt = "GIF not found" >
+	</div>
+
+	<div class="info">
+		<p>
+			<form method="GET">
+				<input type="text" name="entry">
+				<input type="submit" name="search" value="search">
+			</form>
+			<a href="{{ url_for('home') }}">
+				<button>
+					Random GIF
+				</button>
+			</a>
+		</p>
+	</div>
 </body>
 </html>
