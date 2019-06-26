@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<script type="text/javascript">
+	if ( '{{ flag }}' == 'True') {
+		alert('GIF not found');
+	}
+	</script>
 	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/styles.css') }}">
 	<title>
 		{{ title }} - giphy clone
@@ -19,5 +24,6 @@
 			Go home
 		</button>
 	</a>
+	<!--<img src="{{ gif }}" alt = "" >-->
 </body>
 </html>
