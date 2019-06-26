@@ -4,6 +4,7 @@ from random import randint
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '3d6f45a5fc12445dbac2f59c3b6c7cb1'
+app.static_folder = 'static'
 
 
 gifs = {'dog': '1', 'pizza': '2', 'yawning': '3'}

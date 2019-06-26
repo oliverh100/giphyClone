@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel= "stylesheet" type = "text/css" href = "{{ url_for('static', filename='stylesheets/style.css') }}">
+	<link rel= "stylesheet" type = "text/css" href = "{{ url_for('static', filename='stylesheets/styles.css') }}">
 	<script type="text/javascript">
 		if ( '{{ flag }}' == 'True') {
 			alert('GIF not found');
@@ -24,13 +24,11 @@
 	<div class="info">
 		<p>
 			<form method="GET">
-				<input type="text" name="entry">
-				<input type="submit" name="search" value="search">
+				<input type="text" name="entry" id="searchBar">
+				<input type="submit" name="search" value="Search" id="searchButton">
 			</form>
 			<a href="{{ url_for('home') }}">
-				<button>
-					Random GIF
-				</button>
+				<input type="submit" name="random" value="Choose Random GIF" id="random">
 			</a>
 		</p>
 	</div>

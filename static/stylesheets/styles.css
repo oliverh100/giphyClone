@@ -1,15 +1,11 @@
 body {
-	/*background-color: #8DEEE0;*/
-	background-color: red;
+	background-color: #8DEEE0;
 }
 
 #h1_title {
 	text-align: center;
 }
 
-button {
-	font-size: 16px;
-}
 
 img {
 	height: 400px;
@@ -22,10 +18,47 @@ a {
 }
 
 .main {
-	width: 25%;
+	position: absolute;
+	left: 500px;
 }
 
 .info {
-	width: 75%;
-	float: left;
+	position: absolute;
+	left: 500px;
+	top: 500px;
+}
+
+#searchBar {
+	width: 500px;
+	left: 0px;
+	top: 0px;
+  	box-sizing: border-box;
+  	border: 2px solid #ccc;
+  	border-radius: 4px;
+  	font-size: 16px;
+  	background-color: white;
+  	background-image: url('search.png');
+  	background-position: 10px 10px; 
+  	background-repeat: no-repeat;
+  	padding: 12px 20px 12px 40px;
+}
+
+#searchButton {
+	position: absolute;
+	top: 65px;
+	left: 0px;
+	width: 250px;
+	height: 30px;
+	background-color: white;
+	font-size: 20px;
+}
+
+#random {
+	position: absolute;
+	left: 250px;
+	top: 65px;
+	width: 250px;
+	height: 30px;
+	background-color: white;
+	font-size: 20px;
 }
