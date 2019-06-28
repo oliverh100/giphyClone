@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, url_for, flash
 import random
-from fuzzywuzzy import process
+from fuzzywuzzy import process, fuzz
 from db import *
 
 
@@ -48,6 +48,7 @@ def find_tag_list(choice, db_list):
 		if choice in temp:
 			tagList.append(i)
 	return tagList
+
 
 
 
