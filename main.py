@@ -25,18 +25,13 @@ def home():
 			choice = random.choice(tags.get(tags.tag == nearest).gifs)
 		else:
 			choice = random.choice(tags.get(tags.tag == data).gifs)
-		tagList = []
-		for i in db_list:
-			temp = [x.filename for x in tags.get(tags.tag == i).gifs]
-			if choice.filename in temp:
-				tagList.append(i)
-
+		choice = choice.filename
 	else:
 		choice = str(random.randint(1,10)) + ".gif"
-		tagList = ''
+	tagList = []
+	for i in db_list:
+		temp = [x.filename for x in tags.get(tags.tag == i).gifs]
+		if choice in temp:
+			tagList.append(i)
 	return render_template('home.html', gif = choice, tagList = tagList)
-
-
-
-
-
+	

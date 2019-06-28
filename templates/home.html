@@ -13,11 +13,20 @@
 		</h1>
 	</div>
 	<div class="main">
-		<img src="/static/library/{{ gif.filename }}" alt = "GIF not found" >
+		<img src="/static/library/{{ gif }}" alt = "GIF not found" >
 	</div>
-	<p>
-		{{ tagList }}
-	</p>
+	<div class="tag_list">
+		<p>
+			<b>
+				Tags associated with this GIF:
+			</b>
+		</p>
+		{% for tag in tagList %}
+		<p id="tag_list_p">
+			{{ tag }}
+		</p>
+		{% endfor %}
+	</div>
 	<div class="info">
 		<p>
 			<form method="GET">

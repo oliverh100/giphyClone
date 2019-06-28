@@ -62,3 +62,13 @@ a {
 	background-color: white;
 	font-size: 18px;
 }
+
+#tag_list_p {
+	color: black;
+}
+
+.tag_list {
+	position: absolute;
+	left: 250px;
+	top: 150px;
+}
