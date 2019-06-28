@@ -1,5 +1,7 @@
 from peewee import *
 
+
+
 db = SqliteDatabase('static/gifs.db')
 
 
@@ -12,7 +14,9 @@ class gif(Model):
 		database = db
 		db_table = 'gif2'
 
+
 defered_link = DeferredThroughModel()
+
 
 class tags(Model):
 	# id = IntegerField()
@@ -22,6 +26,7 @@ class tags(Model):
 	class Meta:
 		database = db
 		db_table = 'tags2'
+
 
 
 class link(Model):
@@ -34,5 +39,6 @@ class link(Model):
 	class Meta:
 		database = db
 		db_table = 'link'
-		
+
+
 defered_link.set_model(link)

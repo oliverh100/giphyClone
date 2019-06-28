@@ -26,6 +26,9 @@
 			{{ tag }}
 		</p>
 		{% endfor %}
+		<p>
+			<br><br>This is {{ filename }}
+		</p>
 	</div>
 	<div class="info">
 		<p>
@@ -37,6 +40,24 @@
 				<input type="submit" name="random" value="Choose Random GIF" id="random">
 			</a>
 		</p>
+	</div>
+	<div class="new_tag">
+		<form method="GET">
+			<input type="text" name="tagEntry">
+			<select name="gifTag">
+				<option>1.gif</option>
+				<option>2.gif</option>
+				<option>3.gif</option>
+				<option>4.gif</option>
+				<option>5.gif</option>
+				<option>6.gif</option>
+				<option>7.gif</option>
+				<option>8.gif</option>
+				<option>9.gif</option>
+				<option>10.gif</option>
+			</select>
+			<input type="submit" name="Add tag" value="Add tag">
+		</form>
 	</div>
 </body>
 </html>
