@@ -12,10 +12,12 @@ class gif(Model):
 		database = db
 		db_table = 'gif2'
 
+defered_link = DeferredThroughModel()
 
 class tags(Model):
 	# id = IntegerField()
 	tag = CharField()
+	gifs = ManyToManyField(gif, backref='tags', through_model=defered_link)
 
 	class Meta:
 		database = db
@@ -23,12 +25,14 @@ class tags(Model):
 
 
 class link(Model):
-	# gif_id = ForeignKeyField(gif, backref = 'link')
-	# tag_id = ForeignKeyField(tags, backref = 'link')
+	gif = ForeignKeyField(gif, backref = 'tag_links')
+	tag = ForeignKeyField(tags, backref = 'gif_links')
 
 	# id = IntegerField()
-	tag = IntegerField()
+	# tag = IntegerField()
 
 	class Meta:
 		database = db
-		db_table = 'link2'
+		db_table = 'link'
+		
+defered_link.set_model(link)

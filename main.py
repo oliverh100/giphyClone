@@ -10,14 +10,11 @@ app.config['SECRET_KEY'] = '3d6f45a5fc12445dbac2f58c3b6c7cb1'
 app.static_folder = 'static'
 
 
-'''
-temp = gif.select()
-db_list = [''] * len(temp)
-for i in range(len(temp)):
-	db_list[i] = temp[i].tag
-'''
 
-'''
+db_list = [tag.tag for tag in tags.select(tags.tag).distinct()]
+
+
+
 @app.route('/', methods = ['GET'])
 def home():
 	data = request.args.get('entry')
@@ -25,37 +22,19 @@ def home():
 		data = data.lower()
 		if data not in db_list:
 			nearest = process.extract(data, db_list, limit = 1)[0][0]
-			secondary_options = gif.select().where(gif.tag == nearest)
-			choice = random.choice(secondary_options).filename
+			choice = random.choice(tags.get(tags.tag == nearest).gifs)
 		else:
-			options = gif.select().where(gif.tag == data)
-			choice = random.choice(options).filename
+			choice = random.choice(tags.get(tags.tag == data).gifs)
+		tagList = []
+		for i in db_list:
+			temp = [x.filename for x in tags.get(tags.tag == i).gifs]
+			if choice.filename in temp:
+				tagList.append(i)
+
 	else:
 		choice = str(random.randint(1,10)) + ".gif"
-	return render_template('home.html', gif = "/static/library/" + choice)
-
-'''
-
-@app.route('/', methods = ['GET'])
-def home():
-	data = request.args.get('entry')
-	if data:
-
-
-		tagIDs = tags.select().where(tags.tag == data)
-
-		TAGID = random.choice(tagIDs).id
-		print(TAGID)
-		GIFIDs = link.get(link.tag == TAGID)
-		GIFID = GIFIDs.id
-		print(GIFID)
-		filename = gif.get(gif.id == GIFID)
-		print(filename.filename)
-		choice = filename.filename
-
-
-
-	return render_template('home.html', gif = "/static/library/" + choice)
+		tagList = ''
+	return render_template('home.html', gif = choice, tagList = tagList)
 
 
 
